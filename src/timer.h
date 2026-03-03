@@ -7,23 +7,22 @@
 #define TIMER_H
 
 void qs_time(std::vector<int>& v) {
-
+	
 	auto start{std::chrono::steady_clock::now()};
 	quick_sort(v,0,v.size());
-	volatile int sink = v[0];
 	auto end{std::chrono::steady_clock::now()};
-	auto ms_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+	auto qs_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
 
-	std::cout << ms_time.count() << " ms";
+	std::cout << qs_time.count() << " ms\n";
 }
 
 void is_time(std::vector<int>& v) {
 	auto start{std::chrono::steady_clock::now()};
 	insertion_sort(v);
 	auto end{std::chrono::steady_clock::now()};
-	auto ms_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+	auto is_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
 
-	std::cout << ms_time.count() << " ms\n";
+	std::cout << is_time.count() << " ms\n";
 }
 
 void ms_time(std::vector<int>& v) {

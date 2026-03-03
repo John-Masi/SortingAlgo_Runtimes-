@@ -3,7 +3,7 @@
 #ifndef RANDOM_H
 #define RANDOM_H
 
-std::vector<int> randomize_array(std::size_t c_size) {
+std::vector<int> randomize_array(size_t c_size) {
 	std::vector<int> a(c_size);
 	std::random_device r_device;
 	std::mt19937 generator(r_device());
